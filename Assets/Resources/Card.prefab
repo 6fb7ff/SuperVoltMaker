@@ -231,7 +231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u706B\u529B\u767A\u96FB\u6240"
+  m_Text: Name
 --- !u!1 &2754424281084073415
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: C
 --- !u!1 &3175956139038807325
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 40
+  m_Text: P
 --- !u!1 &8540351152734671602
 GameObject:
   m_ObjectHideFlags: 0
