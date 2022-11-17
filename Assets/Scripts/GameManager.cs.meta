@@ -3,7 +3,11 @@ guid: 0e3684b2d9000d949ab48fd9f25c328a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cardPrefab: {fileID: 3099272531021330982, guid: 02d51b966b015cd41b9d4d19c431b68c, type: 3}
+  - Hand: {instanceID: 0}
+  - Ocean: {instanceID: 0}
+  - Land: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

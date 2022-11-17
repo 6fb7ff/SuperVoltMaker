@@ -572,8 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3684b2d9000d949ab48fd9f25c328a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Card_01: {fileID: 3175956139038807325, guid: 02d51b966b015cd41b9d4d19c431b68c, type: 3}
-  Card_02: {fileID: 876268933708085182, guid: 969f295385e4c8344bf537c98632b1fe, type: 3}
+  cardPrefab: {fileID: 3099272531021330982, guid: 02d51b966b015cd41b9d4d19c431b68c, type: 3}
   Hand: {fileID: 2068486182}
   Ocean: {fileID: 1845882449}
   Land: {fileID: 251627271}
