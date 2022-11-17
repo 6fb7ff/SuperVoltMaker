@@ -1,12 +1,12 @@
 # ProductName
 
-スーパーボルトメーカー
+スーパーボルトメーカー(SuperVoltMaker,略称SVM) 
 
 # Features
 
-電力の需要や天気によって供給量を決定する
-
-
+創成工学演習にて使用するソフトウェア
+電力の需要や天気によって供給量を決定
+停電にならないように発電ポイントとエコポイントを貯める
 
 # Usage
 
@@ -15,13 +15,12 @@ https://6fb7ff.github.io/
 
 # Note
 
-エラーが出るのでまだ動きません。
+index.html関連のエラーが出るのでまだ動きません
 
 # Author
 
-* 作成者　高橋優心(https://github.com/6fb7ff)
-* 所属　　旭川工業高等専門学校
-* E-mail　e192120@edu.asahikawa-nct-ac.jp
+* Author : Yushin Takahashi (https://github.com/6fb7ff)
+* E-mail : y.takahashi160126@gmail.com
 
 # License
 
