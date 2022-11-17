@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] CardController cardPrefab;
     [SerializeField] Transform Hand, Ocean, Land;
+    [SerializeField] Text NowTurnTxt;
+    [SerializeField] Text MaxTurnTxt;
 
-    int turncount;
+    public int NowTurn; // 現在ターン
+    public int MaxTurn; // 最大ターン
+
     //int demand,supply;
 
     void Start(){
@@ -16,15 +21,30 @@ public class GameManager : MonoBehaviour
 
     void StartGame(){ // 初期値の設定 {
         // ターンの決定
-        turncount = 0;
+        NowTurn=1;
+        MaxTurn=10;
+        ShowTurn();
         DrawCard(Hand);        
     }
+
+
 
     void CreateCard(int cardID, Transform place){
         CardController card = Instantiate(cardPrefab, place);
         card.Init(cardID);
     }
 
+    void ShowTurn() // ターンを表示するメソッド
+    {
+        NowTurnTxt.text = NowTurn.ToString();
+        MaxTurnTxt.text = MaxTurn.ToString();
+    }
+
+    /*void ShowCost() // コストを表示するメソッド
+    {
+        NowCost.text = NowCost.ToString();
+        MaxCost.text = MaxCost.ToString();
+    }*/
 
     void DrawCard(Transform hand){
         for (int i = 0; i < 2; i++){
@@ -55,9 +75,7 @@ public class GameManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        turncount++;
-
-        Debug.Log(turncount);
+        Debug.Log(NowTurn);
 
         /*ゲームオーバー判定
         if(demand>supply){
@@ -65,8 +83,10 @@ public class GameManager : MonoBehaviour
         }      
         */
 
-        if (turncount<10){
+        if (NowTurn<MaxTurn){
             PlayerTurn();
+            NowTurn++;
+            ShowTurn();
         }else{
             GameEnd();
         }
