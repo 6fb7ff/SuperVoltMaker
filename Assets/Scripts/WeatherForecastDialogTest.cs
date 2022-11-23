@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class OKCancelDialogTest : MonoBehaviour
+public class WeatherForecastDialogTest : MonoBehaviour
 {
     // ダイアログを追加する親のCanvas
     [SerializeField] private Canvas parent = default;
     // 表示するダイアログ
-    [SerializeField] private OKCancelDialog dialog = default;
+    [SerializeField] private WeatherForecastDialog dialog = default;
 
-    public void ShowDialog()
+    public static WeatherForecastDialogTest instance;
+
+    public void ShowForecast()
     {
         // 生成してCanvasの子要素に設定
         var _dialog = Instantiate(dialog);
