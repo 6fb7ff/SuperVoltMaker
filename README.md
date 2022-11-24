@@ -9,13 +9,11 @@
 停電にならないように発電ポイントとエコポイントを貯める
 
 # Usage
-
-https://6fb7ff.github.io/
+https://6fb7ff.github.io/SVM/?
 にアクセス
 
 # Note
-
-index.html関連のエラーが出るのでまだ動きません
+エラーが多すぎて萎えてます
 
 # Author
 

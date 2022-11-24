@@ -4,10 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+Todo 
+2.計算
+
+
+*/
+
+
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] CardController cardPrefab;
+<<<<<<< HEAD
     [SerializeField] public Transform Hand, Ocean, Land;
     [SerializeField] public Text NowTurnTxt;
     [SerializeField] public Text NowTurnTxt_End;
@@ -16,17 +26,31 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Text DemandTxt_End;
     [SerializeField] public Text SupplyTxt;
     [SerializeField] Text CostPointTxt;
+=======
+    [SerializeField] Transform Hand, Ocean, Land;
+    [SerializeField] Text NowTurnTxt;
+    [SerializeField] Text MaxTurnTxt;
+    [SerializeField] Text WeatherTxt;
+    [SerializeField] Text DemandTxt;
+    [SerializeField] Text SupplyTxt;
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
     [SerializeField] GameObject ForeCast;
     [SerializeField] GameObject End;
     [SerializeField] GameObject Clear;
     [SerializeField] GameObject Over;
+<<<<<<< HEAD
 
     bool    process = false;
+=======
+    
+    bool process    =false;
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
     int     NowTurn; // 現在ターン
     int     MaxTurn; // 最大ターン
     int     Weather_int;
     string  Weather;
     int     Demand;
+<<<<<<< HEAD
     int     Supply = 5000;
     int     Point_Volt =0;
     public int CostPoint; // 使用したマナポイント
@@ -38,6 +62,9 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
+=======
+    int     Supply = 200;
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
 
     void Start(){
         StartGame();
@@ -47,6 +74,7 @@ public class GameManager : MonoBehaviour
     void StartGame()
     { // 初期値の設定 
         NowTurn=1;
+<<<<<<< HEAD
         MaxTurn=8;
         CostPoint = 0;
         ShowCostPoint();
@@ -103,14 +131,44 @@ public class GameManager : MonoBehaviour
             case 8 : Demand = 4500 ;break;
         }
         Demand += (Random.Range(1, 10))*50 -250;
+=======
+        MaxTurn=10;
+        TurnStart();
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
     }
 
+    void TurnStart(){
+        if(!process){
+            DrawCard(Hand);
+            Weather_int = Random.Range(1, 4);
+            Demand  = (Random.Range(1, 10)) * 10 + 50;// ※ 1～9の範囲でランダムな整数値が返る
+            switch( Weather_int )
+            {
+            case 1: Weather = "晴れ"; break;
+            case 2: Weather = "曇り"; break;
+            case 3: Weather = "雨"; break;
+            case 4: Weather = "雷"; break;
+            }
 
+<<<<<<< HEAD
 /*
     void ShowForeCast(){
         this.ForeCast.SetActive (true);
 
     }*/
+=======
+            this.ForeCast.SetActive (true);
+            NowTurnTxt.text = NowTurn.ToString();
+            MaxTurnTxt.text = MaxTurn.ToString();
+            WeatherTxt.text = Weather;
+            DemandTxt.text = Demand.ToString();
+            process = true;
+            Debug.Log(NowTurn +"ターン目 開始 / " + Weather +Demand + process);
+        }
+        
+            
+    }
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
 
     /*
     void PowerChange(){
@@ -167,7 +225,11 @@ public class GameManager : MonoBehaviour
  
     public void ChangeTurn(){
 
+<<<<<<< HEAD
         //this.End.SetActive (true);
+=======
+        this.End.SetActive (true);
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
         //子オブジェクトを一つずつ取得
         foreach (Transform child in Hand)
         {
@@ -195,14 +257,18 @@ public class GameManager : MonoBehaviour
         }
         */
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
         if(Demand>Supply){
             GameOver();
         }      
 
 
         if (NowTurn<MaxTurn){
+<<<<<<< HEAD
             
             this.End.SetActive (true);
             if(End.activeSelf){
@@ -214,21 +280,33 @@ public class GameManager : MonoBehaviour
                 }
                 DemandTxt_End.text = Demand.ToString();
             }
+=======
+            TurnEnd();
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
 
         }else{
             GameClear();
         }
     }
 
+<<<<<<< HEAD
     public void TurnEnd(){
         
         //Debug.Log(NowTurn+"ターン目 終了");
+=======
+    void TurnEnd(){
+        
+        Debug.Log(NowTurn+"ターン目 終了");
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
         NowTurn++;
         process = false;
         TurnStart();
     } 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
     public void GameOver(){
         this.Over.SetActive (true);
     }
@@ -236,8 +314,13 @@ public class GameManager : MonoBehaviour
     public void GameClear(){
         this.Clear.SetActive (true);
         
+<<<<<<< HEAD
         //Debug.Log(NowTurn+"ターン目 終了");
         //Debug.Log("クリア");
+=======
+        Debug.Log(NowTurn+"ターン目 終了");
+        Debug.Log("クリア");
+>>>>>>> 009b0b981b9fcf6015cd9af8f9de62232990e0c7
     }
 
     public void GotoTitle(){
