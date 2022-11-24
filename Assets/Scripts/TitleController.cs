@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartController : MonoBehaviour
+public class TitleController : MonoBehaviour
 {
     public bool firstpush = false;
     

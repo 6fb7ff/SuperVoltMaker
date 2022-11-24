@@ -1,5 +1,3 @@
-// OkCancelDialogTest.cs
-
 using UnityEngine;
 
 public class OKCancelDialogTest : MonoBehaviour
