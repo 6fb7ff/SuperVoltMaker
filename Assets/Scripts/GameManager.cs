@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     int     Weather_int;
     string  Weather;
     int     Demand;
-    int     Supply = 5000;
+    int     Supply = 50000;
     int     Point_Volt =0;
     public int CostPoint; // 使用したマナポイント
 
@@ -201,30 +201,27 @@ public class GameManager : MonoBehaviour
             GameOver();
         }      
 
-
-        if (NowTurn<MaxTurn){
-            
-            this.End.SetActive (true);
-            if(End.activeSelf){
-                Debug.Log("End is Active "+ Demand + "/ " + Supply);
-                if (NowTurn % 2 == 1){
-                    NowTurnTxt_End.text = (((NowTurn+1)/2).ToString() + "日目 午前"); 
-                }else{
-                    NowTurnTxt_End.text = (((NowTurn+1)/2).ToString() + "日目 午後");
-                }
-                DemandTxt_End.text = Demand.ToString();
+        this.End.SetActive (true);
+        if(End.activeSelf){
+            Debug.Log("End is Active "+ Demand + "/ " + Supply);
+            if (NowTurn % 2 == 1){
+                NowTurnTxt_End.text = (((NowTurn+1)/2).ToString() + "日目 午前"); 
+            }else{
+                NowTurnTxt_End.text = (((NowTurn+1)/2).ToString() + "日目 午後");
             }
-
-        }else{
-            GameClear();
+            DemandTxt_End.text = Demand.ToString();
         }
     }
 
     public void TurnEnd(){
-        
+        if (NowTurn>=MaxTurn){
+            GameClear();
+        }
+
         //Debug.Log(NowTurn+"ターン目 終了");
         NowTurn++;
         process = false;
+
         TurnStart();
     } 
 
